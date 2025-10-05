@@ -1,6 +1,95 @@
-title: "My Blog"
-description: "Thoughts, notes, experiments"
-theme: minima
+title: "Your Scientific Notebook"
+description: "Notes on neuroscience, synbio, genome editing, ethics, consciousness, and more."
+url: "https://<your-username>.github.io"
+baseurl: ""   # for project sites, set "/<repo-name>"
+
+author:
+  name: "Your Name"
+  email: "you@example.com"
+
+# Collections for Gwern-like structure
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title/
+  reviews:
+    output: true
+    permalink: /reviews/:title/
+  literature:
+    output: true
+    permalink: /lit/:title/
+
+# Defaults (front-matter fallbacks)
+defaults:
+  - scope: { path: "" }
+    values: { layout: post, toc: true, math: true }
+  - scope: { path: "", type: "notes" }
+    values: { layout: note, toc: true, math: true }
+  - scope: { path: "", type: "reviews" }
+    values: { layout: note, toc: true, math: true }
+  - scope: { path: "", type: "literature" }
+    values: { layout: note, toc: true, math: true }
+
+# Build
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  footnote_nr: 1
+  math_engine: mathjax
+
+# Plugins (via GitHub Actions you can use any Ruby gem listed in Gemfile)
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-toc
+  - jekyll-redirect-from
+  - jekyll-scholar
+
+# Archives (by category & tag)
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive
+    tag: archive
+  permalinks:
+    category: /category/:name/
+    tag: /tag/:name/
+
+# Table of contents
+toc:
+  min_level: 2
+  max_level: 4
+  ordered_list: false
+
+# jekyll-scholar (citations)
+scholar:
+  style: apa
+  locale: en
+  source: ./assets/bib
+  bibliography: references.bib
+  bibliography_template: bib
+  inlinestyles: false
+  sort_by: year,month
+  order: descending
+
+permalink: /:categories/:year/:month/:day/:title/
+
+# Navigation (edit to taste)
+nav:
+  - name: Home
+    url: /
+  - name: Notes
+    url: /notes/
+  - name: Reviews
+    url: /reviews/
+  - name: Literature
+    url: /lit/
+  - name: Topics
+    url: /topics/
+  - name: About
+    url: /about/
