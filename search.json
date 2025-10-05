@@ -1,0 +1,14 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+  {% assign docs = site.pages | concat: site.posts | concat: site.notes | concat: site.reviews | concat: site.literature %}
+  {% for doc in docs %}
+    {
+      "title": {{ doc.title | jsonify }},
+      "url": {{ doc.url | relative_url | jsonify }},
+      "content": {{ doc.content | strip_html | normalize_whitespace | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
