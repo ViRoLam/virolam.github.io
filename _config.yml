@@ -1,0 +1,6 @@
+title: "My Blog"
+description: "Thoughts, notes, experiments"
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
