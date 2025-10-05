@@ -15,11 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/jekyll-build-pages@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
+          ruby-version: '3.2'
+          bundler-cache: true
+      - run: bundle install --path vendor/bundle
+      - uses: actions/configure-pages@v5
+      - run: bundle exec jekyll build --trace --destination ./_site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
