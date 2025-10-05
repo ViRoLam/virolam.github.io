@@ -1,11 +1,11 @@
 title: "Your Scientific Notebook"
 description: "Notes on neuroscience, synbio, genome editing, ethics, consciousness, and more."
-url: "https://<your-username>.github.io"
+url: "https://virolam.github.io"
 baseurl: ""   # for project sites, set "/<repo-name>"
 
 author:
-  name: "Your Name"
-  email: "you@example.com"
+  name: "Victor Robert Lambrecht"
+  email: "victor.robert-lam@student-cs.fr"
 
 # Collections for Gwern-like structure
 collections:
