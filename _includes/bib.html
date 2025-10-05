@@ -1,0 +1,8 @@
+{% for entry in bibliography %}
+  <p id="{{entry.key}}">
+    {{entry.author}} ({{entry.year}}).
+    <i>{{entry.title}}</i>.
+    {% if entry.container-title %}{{entry.container-title}}.{% endif %}
+    {% if entry.DOI %} <a href="https://doi.org/{{entry.DOI}}">doi:{{entry.DOI}}</a>{% endif %}
+  </p>
+{% endfor %}
