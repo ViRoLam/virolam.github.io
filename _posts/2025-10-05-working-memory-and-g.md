@@ -23,8 +23,12 @@ g \sim \beta_0 + \beta_1 \text{WM} + \epsilon
 $$
 
 ## A Mermaid sketch
-```mermaid
+
+<div class="mermaid">
 graph TD
   WM[Working Memory] --> G[g]
   WM --> FP[Fronto-Parietal Control]
   FP --> G
+</div>
+
+{% bibliography %}
