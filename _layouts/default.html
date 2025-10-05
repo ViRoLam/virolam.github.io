@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- MathJax -->
+  {% if page.math or layout.math %}
+  <script>
+    window.MathJax = { tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}, svg: {fontCache: 'global'} };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  {% endif %}
+
+  <!-- Mermaid for diagrams -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', ()=>{ if (window.mermaid) mermaid.initialize({startOnLoad:true}); });</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav">
+      {% for item in site.nav %}
+        <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+      {% endfor %}
+      <a href="{{ '/search/' | relative_url }}">Search</a>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ "now" | date: "%Y" }} {{ site.author.name }} — <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+  </footer>
+
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/lunr.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+</body>
+</html>
