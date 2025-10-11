@@ -4,7 +4,7 @@ title: Home
 ---
 # Welcome
 
-This is my ongoing research notebook: long-form essays, structured notes, and literature highlights across neuroscience (g, p, working memory), synthetic biology, human genome editing, ethics & animal welfare, and consciousness (non-dual Advaita Vedānta).
+This is my research notebook where I explore how to improve the world through the lens of effective altruism and rationalist thought. My focus is on high-impact factors ([general factors](/general_factors/), spanning neuroscience (g, p, working memory), synthetic biology, longevity, human genome editing, ethics, animal sufffering, and consciousness (especially non-dual Advaita Vedanta).
 
 - Latest posts
 {% for post in site.posts limit:5 %}
