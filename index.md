@@ -4,7 +4,7 @@ title: Home
 ---
 # Welcome
 
-This is my research notebook where I explore how to improve the world through the lens of effective altruism and rationalist thought. My focus is on high-impact factors [general factors]({% post_url general_factors %}), spanning neuroscience (g, p, working memory), synthetic biology, longevity, human genome editing, ethics, animal sufffering, and consciousness (especially non-dual Advaita Vedanta).
+This is my research notebook where I explore how to improve the world through the lens of effective altruism and rationalist thought. My focus is on high-impact factors [general factors]({% post_url 2025-10-11-general_factors %}), spanning neuroscience (g, p, working memory), synthetic biology, longevity, human genome editing, ethics, animal sufffering, and consciousness (especially non-dual Advaita Vedanta).
 
 - Latest posts
 {% for post in site.posts limit:5 %}
